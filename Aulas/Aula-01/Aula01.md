@@ -9,5 +9,25 @@ porém temos outras formas de desenvolver software,
 - Integração
 
 # Estrutura de Dados
- - Estruturas 
- - 
+- Estruturas 
+
+# PO (Programação Orientada)
+- Otimização
+- Memória principal( quando todos os dados estão na memória)
+  - Ordenação {
+    - 14 Algoritmos
+    -  } 
+  - Pesquisa {4 Algoritmos}
+- Memória Secundária (quandos todos os dados não estão na memória principal)
+  
+
+# Escabilidade de Hardware e Software
+- Escabilidade 
+1. Horizontal
+2. VERTICAL
+
+
+# Dicas
+gITHUB ISSUES (KANBAN)
+Integração
+Programação Orientada
