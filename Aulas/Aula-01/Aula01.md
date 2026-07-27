@@ -32,6 +32,16 @@ Algoritmos Simples mas de Alta Complexidade(muito Esforço)
 - Select
 - Insert
 - Bolha
+## Outros
+- Agitação
+- pente (Comb Solt) - Bom Desempenho e baixa Complexidade
+- shell
+- radix
+- bucket
+- Merge} 
+            Complexos, mas baixa Complexidade
+- Quick}
+- HEAP - Algoritmo De Árvore
 
 # Complexidade
 Complexidade == Esforço Computacional
