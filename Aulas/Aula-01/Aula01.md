@@ -26,6 +26,15 @@ porém temos outras formas de desenvolver software,
 1. Horizontal
 2. VERTICAL
 
+# Expressões (Algoritmos)
+Algoritmos Simples mas de Alta Complexidade(muito Esforço)
+- Ordenar (Sort)
+- Select
+- Insert
+- Bolha
+
+# Complexidade
+Complexidade == Esforço Computacional
 
 # Dicas
 gITHUB ISSUES (KANBAN)
