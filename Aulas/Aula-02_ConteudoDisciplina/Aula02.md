@@ -23,7 +23,7 @@ em um caso onde os dados estão "crescendo exponencialmente", cortamos os dados 
 - O(log n + n)  comb Sort/ pente              |  quanto mais pra cima maior a complexidade
   - Instável, os melhores algoritmos são      |
   - isntáveis                                 | 
-- O(h) - linear:                              |
+- O(n) - linear:                              |
 - O(log n) - logaritmo: menor complexidade    |
 
 
