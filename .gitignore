@@ -1,0 +1,110 @@
+Aulas/.fita-markdown.json
+
+# =========== ARQUIVOS COMPILADOS ===========
+# Objetos e executáveis
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# =========== PASTAS DE BUILD ===========
+/build/
+/bin/
+/Debug/
+/Release/
+/x64/
+/x86/
+/out/
+
+# =========== Arquivos específicos C/C++ ===========
+# Pré-compilados
+*.gch
+*.pch
+*.chi
+*.chh
+
+# Dependências
+*.d
+*.P
+
+# Arquivos de linkagem
+*.ilk
+*.pdb
+*.exp
+*.map
+
+# =========== Arquivos específicos de IDE ===========
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# CLion (JetBrains)
+.idea/
+cmake-build-*/
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+*.suo
+*.swp
+
+# CodeBlocks
+*.cbp
+*.depend
+*.layout
+
+# Eclipse
+.cproject
+.project
+.settings/
+
+# =========== Arquivos do sistema ===========
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux/Mac
+.DS_Store
+.*.swp
+.*.swo
+*~
+.nfs*
+
+# =========== Arquivos de backup ===========
+*.bak
+*.old
+*.orig
+*.tmp
+
+# =========== Logs e bancos de dados ===========
+*.log
+*.db
+*.sqlite
+
+# =========== Arquivos de documentação gerados ===========
+/docs/_build/
+/docs/api/
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+
+# Ignorar binários e cache
+build/
+bin/
+__pycache__/
+*.class
+.idea/
