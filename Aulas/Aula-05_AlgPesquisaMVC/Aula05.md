@@ -40,7 +40,7 @@ void selecao(List<int> lista){
         int i, j;
 
         for(i=0; i<lista.Size()-1; i++){
-                posMenor = 1;
+                posMenor = i;
                 for(j= i+1;j<lista.Size(); j++){
                         if(lista[j]<lista[posMenor]){
                                 posMenor=j;
@@ -82,16 +82,16 @@ void insercao(List<int> lista){
 Seguindo o MVC
 ## Model
 Utilidades.java
-popularLista(...)
+- popularLista(...)
 ## View
 ListaView.java
-exibirLista(...)
-exibirTempo(...)
+- exibirLista(...)
+- exibirTempo(...)
 ## Controller
 ListaController.java
-listaBolha
-listaSelecao
-listaInsercao
+- listaBolha
+- listaSelecao
+- listaInsercao
 popular lista Bolha -- 5.000
 popular lista Selecao -- 5.000
 popular lista Insercao -- 5.000
@@ -106,4 +106,22 @@ Ordenação.bolha(listaBolha)
 Ordenação.selecao(listaSelecao)
 Ordenação.insercao(listaInsercao)
 
-onde essa classe deve ficar?
+onde essa classe deve ficar? Essa classe deve ficar no model
+                    ┌─────────────────┐
+                    │    CONTROLLER   │
+                    │                 │
+                    │ ListaController │
+                    └────────┬────────┘
+                             │
+             ┌───────────────┼───────────────┐
+             │               │               │
+             ▼               ▼               ▼
+      ┌────────────┐  ┌────────────┐  ┌────────────┐
+      │ Utilidades │  │ Ordenacao  │  │    View    │
+      │            │  │            │  │            │
+      │ popular    │  │ bolha      │  │ exibir     │
+      │ lista      │  │ selecao    │  │ tempo      │
+      │            │  │ insercao   │  │            │
+      └────────────┘  └────────────┘  └────────────┘
+           MODEL           MODEL          VIEW
+#
