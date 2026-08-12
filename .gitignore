@@ -41,6 +41,7 @@ Aulas/.fita-markdown.json
 
 # =========== Arquivos específicos de IDE ===========
 # VS Code
+.vscode
 .vscode/
 .history/
 *.code-workspace
