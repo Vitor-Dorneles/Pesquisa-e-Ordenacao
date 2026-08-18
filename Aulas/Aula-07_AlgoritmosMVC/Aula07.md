@@ -1,0 +1,3 @@
+// Data: 17/08/2026
+# Atividade Avaliativa
+A partir dos códigos trabalhados (bolha, seleção, inserção e agitação), refatora-los para que funcionem em uma organização MVC. Os algoritmos de ordenação devem estar na classe Ordenacao e serem estáticos. Além disso, é preciso contabilizar números de comparações e trocas, bem como o tempo de execução de cada um. Todas essas operações já foram trabalhadas.

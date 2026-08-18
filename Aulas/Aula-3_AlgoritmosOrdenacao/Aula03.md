@@ -135,7 +135,7 @@ estratégia de divisão e conquista, dividi o vetor até formar partes com um el
         - Estável
         - O(n log n)
         - blocos distribuídos pelo vetor
-#### quicksort
+#### quicksort - C# Utiliza como padrão
 também utiliza divisão e conquista, ele escolhe um elemento (**pivô**) e separa os demais elementos em partições.
 valores menores antes do pivô e maiores depois
         - Interna
