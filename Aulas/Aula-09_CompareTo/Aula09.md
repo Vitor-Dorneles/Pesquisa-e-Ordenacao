@@ -1,10 +1,10 @@
-# Aula 09 — Conteudo Focal
+# Aula 09 — Compare To
 // Data: 24/08/2026
 Hoje utilizaremos o apache netBeans,
 iremos digitar 5 e 6 nomes com idades diferentes e ordenar por idade
 Vamos utilizar o Hashcode e a interface Compareble, para usar o método compareTo
 
-# CompareTo
+## CompareTo
 comparação de elementos
 1º elemento nagativo significa que ele é menor que o primeiro
 maior ele é maior que o segundo
