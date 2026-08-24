@@ -10,8 +10,8 @@ public class ListaView {
 
     public void exibirResultado(String algoritmo, long tempoNano, long comparacoes, long trocas) {
         System.out.println(algoritmo + ":");
-        System.out.println("  Tempo: " + tempoNano + " nanoS");
-        System.out.println("  Comparações: " + comparacoes);
-        System.out.println("  Trocas: " + trocas);
+        System.out.printf("  Tempo: %.2f ms%n", tempoNano / 1_000_000.0);
+        System.out.printf("  Comparações: %,d%n", comparacoes);
+        System.out.printf("  Trocas: %,d%n", trocas);
     }
 }

@@ -21,6 +21,7 @@ public class ListaController {
         List<Integer> listaSelecao = Utilidades.popularLista(5000);
         List<Integer> listaInsercao = Utilidades.popularLista(5000);
         List<Integer> listaAgitacao = Utilidades.popularLista(5000);
+        List<Integer> listaPente = Utilidades.popularLista(5000);
 
         long inicio = System.nanoTime();
         ResultadoOrdenacao resultadoBolha = Ordenacao.bolha(listaBolha);
@@ -60,6 +61,17 @@ public class ListaController {
                 "Agitação",
                 fim - inicio,
                 resultadoAgitacao.getComparacoes(),
-                resultadoAgitacao.getTrocas());
+                        resultadoAgitacao.getTrocas());
+        
+                        
+        inicio = System.nanoTime();
+        ResultadoOrdenacao resultadoPente = Ordenacao.penteOrdenacao(listaPente);
+        fim = System.nanoTime();
+
+        view.exibirResultado(
+                        "Pente",
+                        fim - inicio,
+                        resultadoPente.getComparacoes(),
+                        resultadoPente.getTrocas());
     }
 }

@@ -1,6 +1,6 @@
 // Data: 20/08/2026
-testar o algoritmo pente no benchmark
-
+(ok)testar o algoritmo pente no benchmark
+testar o algoritmo quick do java no benchmark
 # 1
 Como ordenar uma lista por alguma chave do objeto
 
