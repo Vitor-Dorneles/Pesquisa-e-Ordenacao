@@ -4,10 +4,13 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author laboratorio
  */
 public class ModelLista {
     
+    public static ArrayList<Integer> lista;
 }

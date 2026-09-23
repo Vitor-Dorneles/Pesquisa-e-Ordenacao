@@ -20,11 +20,10 @@ public class Ordenacao {
 
                 if (lista.get(i) > lista.get(i + 1)) {
                     houveTroca = true;
-                    qtdTrocas++;
-
                     aux = lista.get(i);
                     lista.set(i, lista.get(i + 1));
                     lista.set(i + 1, aux);
+                    qtdTrocas++;                  
                 }
             }
         } while (houveTroca);
@@ -80,8 +79,9 @@ public class Ordenacao {
 
             for (j = i - 1; j >= 0 && aux < lista.get(j); j--) {
                 qtdComparacoes++;
-                lista.set(j + 1, lista.get(j));
                 qtdTrocas++;
+                lista.set(j + 1, lista.get(j));
+                
             }
 
             if (j >= 0) {
@@ -121,15 +121,14 @@ public class Ordenacao {
 
                 if (lista.get(i) > lista.get(i + distancia)) {
                     houveTroca = true;
-                    qtdTrocas++;
-
                     aux = lista.get(i);
                     lista.set(i, lista.get(i + distancia));
                     lista.set(i + distancia, aux);
+                    qtdTrocas++;
                 }
             }
 
-        } while (houveTroca);
+        } while (distancia > 1 || houveTroca);
 
         metricas.add((float) qtdComparacoes);
         metricas.add((float) qtdTrocas);
