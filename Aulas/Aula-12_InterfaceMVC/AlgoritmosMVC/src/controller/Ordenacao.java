@@ -135,4 +135,38 @@ public class Ordenacao {
 
         return metricas;
     }
+
+    public static ArrayList shell(ArrayList<Integer> lista) {
+        ArrayList<Float> metricas = new ArrayList<>();
+        long qtdComparacoes = 0;
+        long qtdTrocas = 0;
+        int aux;
+        boolean houveTroca;
+        int i, j, n=1;
+        int distancia = 1;
+
+        int referenciaTamanho = 3;
+
+        do {
+            distancia = referenciaTamanho * distancia +1;
+        } while (distancia < n);
+
+        do {
+            distancia = (int) (distancia / referenciaTamanho);
+
+            for (i = distancia; i < n; i++) {
+                aux = vetor[i];
+                for (j = i - distancia; j >= 0; j = j - distancia) {
+                    qtdComparacoes++;
+                    if (aux < vetor[j]) {
+                        vetor[j + distancia] = vetor[j];
+                        qtdTrocas++;
+                    } else
+                        break;
+                }
+                vetor[j + distancia] = aux;
+                qtdTrocas++;
+            }
+        } while (distancia > 1);        
+    }
 }
