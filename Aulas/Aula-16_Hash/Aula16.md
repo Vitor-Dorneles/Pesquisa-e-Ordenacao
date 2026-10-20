@@ -42,6 +42,6 @@ Set == conjunto (sem repetição)
 
 
 ## Perguntas
-
+?? O que é colisão em Hash e por que acontece : Acontece quando chaves diferentes caem na mesma posição, 
 
 ## Erro que cometi
