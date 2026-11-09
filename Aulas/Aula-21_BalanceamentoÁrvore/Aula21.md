@@ -36,6 +36,7 @@ Há dois tipos de balanceamento:
   - Puxamos o pai com valor 2 para o lado (esquerda ou direita) e transformamos o filho ±1 em raiz
     - Sinais iguais = o peso está "em linha reta" (direita-direita ou esquerda-esquerda): um giro endireita.
 - **Rotação/giro duplo:** um giro no nodo filho e outro giro no nodo pai desbalanceado
+  O pai vira filho e o filho vira raiz
   - É uma rotação simples ×2 (duas na sequência)
   - Primeiro rodamos o filho, para o lado que seja (+, -)
   - `pai == -2` e `filho == +1`
