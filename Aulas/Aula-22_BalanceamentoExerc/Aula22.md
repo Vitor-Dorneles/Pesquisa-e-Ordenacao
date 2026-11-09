@@ -12,5 +12,14 @@ fb = altura(subArvore->esquerda) - altura(subArvore->direita)
                50  [Alt: 0] (fb: 0)
 nó folha 50 é zerado pois não tem filhos,
 usamos a altura dele para calcular o 30
-Cálculo do fb: (-1, o lado vazio tem um valor fixo de -1) - (0, altura da direita) = -1
+Cálculo do fb: (-1, o lado vazio tem um valor fixo de -1 ou +1) - (0, altura da direita) = -1
 20 =  (-1) - (-1) = -2
+
+## Árvore de ex
+![alt text](image.png)
+Remoção, ás vezes precisamos balancear essa árvore na Remoção
+
+## Próxima Aula
+- Quinta revisão
+- Apresentação de trabalho sessão segunda
+- Quinta trabalho de programação 
