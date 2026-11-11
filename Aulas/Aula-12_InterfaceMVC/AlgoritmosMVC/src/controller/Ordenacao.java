@@ -136,37 +136,50 @@ public class Ordenacao {
         return metricas;
     }
 
+    /**
+     * Shell Sort: inserção com saltos. Em vez de comparar vizinhos, compara
+     * elementos a "distancia" posições; a distância vai diminuindo até 1,
+     * quando vira a inserção comum, mas com a lista já quase ordenada.
+     * Sequência de distâncias de Knuth: 1, 4, 13, 40, ... (d = 3d + 1).
+     */
     public static ArrayList shell(ArrayList<Integer> lista) {
         ArrayList<Float> metricas = new ArrayList<>();
         long qtdComparacoes = 0;
         long qtdTrocas = 0;
         int aux;
-        boolean houveTroca;
-        int i, j, n=1;
+        int i, j;
+        int n = lista.size();
         int distancia = 1;
 
         int referenciaTamanho = 3;
 
+        // sobe a distância pela sequência 1, 4, 13, 40... até passar do tamanho
         do {
-            distancia = referenciaTamanho * distancia +1;
+            distancia = referenciaTamanho * distancia + 1;
         } while (distancia < n);
 
         do {
-            distancia = (int) (distancia / referenciaTamanho);
+            distancia = distancia / referenciaTamanho;
 
+            // inserção, mas andando de "distancia" em "distancia"
             for (i = distancia; i < n; i++) {
-                aux = vetor[i];
+                aux = lista.get(i);
                 for (j = i - distancia; j >= 0; j = j - distancia) {
                     qtdComparacoes++;
-                    if (aux < vetor[j]) {
-                        vetor[j + distancia] = vetor[j];
+                    if (aux < lista.get(j)) {
+                        lista.set(j + distancia, lista.get(j));   // desloca para frente
                         qtdTrocas++;
-                    } else
+                    } else {
                         break;
+                    }
                 }
-                vetor[j + distancia] = aux;
-                qtdTrocas++;
+                lista.set(j + distancia, aux);   // encaixa aux no lugar aberto
             }
-        } while (distancia > 1);        
+        } while (distancia > 1);
+
+        metricas.add((float) qtdComparacoes);
+        metricas.add((float) qtdTrocas);
+
+        return metricas;
     }
 }

@@ -20,8 +20,8 @@ public class Pessoa implements Comparable <Pessoa>{
      * @param idade 
      */
     public Pessoa(String nome, int idade) {
-        nome=this.nome;
-        idade=this.idade;
+        this.nome = nome;   // this.nome = atributo do objeto; nome = parâmetro recebido
+        this.idade = idade;
     }
 
     public String getNome() {
@@ -38,6 +38,11 @@ public class Pessoa implements Comparable <Pessoa>{
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " (" + idade + ")";
     }
 
     @Override

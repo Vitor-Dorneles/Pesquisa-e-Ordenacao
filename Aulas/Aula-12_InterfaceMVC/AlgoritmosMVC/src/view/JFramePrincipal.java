@@ -86,7 +86,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         lblMetodos.setText("Métodos de Ordenação");
 
-        cbmBoxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bolha", "Seleção", "Inserção", "Pente" }));
+        cbmBoxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bolha", "Seleção", "Inserção", "Pente", "Shell" }));
 
         txtQtdNumeros.setEditable(false);
         txtQtdNumeros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -232,54 +232,36 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnExecutarActionPerformed(java.awt.event.ActionEvent evt) {
-if( ModelLista.lista.isEmpty()){
+        if (ModelLista.lista.isEmpty()) {
             JOptionPane.showMessageDialog(this, "O arquivo não foi carregado para a lista", "Erro", JOptionPane.ERROR_MESSAGE);
-        } else {
-            jPanelResultados.setVisible(true); 
-            switch (cbmBoxMetodos.getSelectedIndex()){
-                case 0: // bolha
-                    metricas.clear();
-                    tempoInicio = System.nanoTime();
-                    metricas.addAll(controller.Ordenacao.bolha(ModelLista.lista));
-                    tempoFim = System.nanoTime(); 
-                    metricas.add((float)(tempoFim - tempoInicio ) / 1000000); 
-                    break;
-                case 1: // insercao
-                    metricas.clear();
-                    tempoInicio = System.nanoTime();
-                    metricas.addAll(controller.Ordenacao.insercao(ModelLista.lista));
-                    tempoFim = System.nanoTime(); 
-                    metricas.add((float)(tempoFim - tempoInicio ) / 1000000);          
-                    break;
-                case 2: // pente
-                    metricas.clear();
-                    tempoInicio = System.nanoTime();
-                    metricas.addAll(controller.Ordenacao.pente(ModelLista.lista));
-                    tempoFim = System.nanoTime(); 
-                    metricas.add((float)(tempoFim - tempoInicio ) / 1000000);
-                    break;
-                    
-                case 3: //selecao
-                    metricas.clear();
-                    tempoInicio = System.nanoTime();
-                    metricas.addAll(controller.Ordenacao.selecao(ModelLista.lista));
-                    tempoFim = System.nanoTime(); 
-                    metricas.add((float)(tempoFim - tempoInicio ) / 1000000);
-                    break;
-                    
-                default:
-                    throw new AssertionError(); 
-            }
-        }  
-        
-            txtQtdNumeros.setText(""+ModelLista.lista.size()); 
-            txtComparacoes.setText(""+metricas.get(0));
-            txtTrocas.setText(""+metricas.get(1));
-            txtTempo.setText(""+metricas.get(2));
-           
-        
-        //jPanel1Resultados.setVisible(true);
-        //System.out.println(CmbMetodo.getSelectedIndex() + " " + CmbMetodo.getSelectedItem());        
+            return;   // sem isso, o código de baixo lia metricas vazia e estourava
+        }
+
+        // Ordena uma CÓPIA: a lista carregada continua desordenada, então rodar
+        // outro método em seguida mede o trabalho real, e não uma lista já ordenada.
+        ArrayList<Integer> copia = new ArrayList<>(ModelLista.lista);
+
+        jPanelResultados.setVisible(true);
+        metricas.clear();
+        tempoInicio = System.nanoTime();
+
+        // Os índices seguem a ordem do combo: Bolha, Seleção, Inserção, Pente, Shell
+        switch (cbmBoxMetodos.getSelectedIndex()) {
+            case 0 -> metricas.addAll(controller.Ordenacao.bolha(copia));
+            case 1 -> metricas.addAll(controller.Ordenacao.selecao(copia));
+            case 2 -> metricas.addAll(controller.Ordenacao.insercao(copia));
+            case 3 -> metricas.addAll(controller.Ordenacao.pente(copia));
+            case 4 -> metricas.addAll(controller.Ordenacao.shell(copia));
+            default -> throw new AssertionError();
+        }
+
+        tempoFim = System.nanoTime();
+        metricas.add((float) (tempoFim - tempoInicio) / 1000000);   // nanossegundos -> ms
+
+        txtQtdNumeros.setText("" + ModelLista.lista.size());
+        txtComparacoes.setText("" + metricas.get(0));
+        txtTrocas.setText("" + metricas.get(1));
+        txtTempo.setText("" + metricas.get(2));
     }
 
 

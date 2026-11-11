@@ -10,4 +10,3 @@ Construir um programa em java ou python que:
   2) Permite procurar um numero de celular e o retorne seja os dados da Sessao
   3) Desafio PLUS: Pesquise sobre o uso de threads e tente procurar N celulares ao mesmo tempo
 
-ENTREGA: SEMANA QUE VEM
