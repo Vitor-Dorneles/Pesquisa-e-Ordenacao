@@ -5,27 +5,20 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Optional;
 import servidor.model.Sessao;
 import servidor.model.TabelaHash;
 
 /**
- * Faz a ponte entre a tela e o modelo: lê o arquivo da base e
- * preenche a TabelaHash. A view não conhece arquivo nem HashMap.
+ * Faz a ligação entre a tela e o model: lê o arquivo da base e
+ * preenche a TabelaHash.
  */
 public class ServidorController {
     private static final String SEPARADOR = ";";
 
     private final TabelaHash tabela = new TabelaHash();
 
-    /**
-     * Lê o arquivo (uma sessão por linha, no formato "celular;dados")
-     * e substitui o conteúdo da tabela.
-     *
-     * @param caminho caminho do arquivo da base
-     * @return quantidade de sessões carregadas
-     * @throws IOException se o arquivo não existir, não puder ser lido
-     *                     ou tiver uma linha fora do formato
-     */
+
     public int carregarArquivo(String caminho) throws IOException {
         tabela.limpar();
 
@@ -39,7 +32,7 @@ public class ServidorController {
                     continue;
                 }
 
-                // limite 2: só o primeiro ';' separa; o resto é dado da sessão
+                
                 String[] campos = linha.split(SEPARADOR, 2);
                 if (campos.length < 2) {
                     tabela.limpar();
@@ -53,7 +46,17 @@ public class ServidorController {
         return tabela.tamanho();
     }
 
-    /** Texto com as sessões carregadas, uma por linha, para exibição. */
+
+   
+    public Optional<Sessao> buscarSessao(String numeroDigitado) {
+        String numero = numeroDigitado.replaceAll("\\D", "");
+        return tabela.buscar(numero);
+    }
+
+    public boolean baseCarregada() {
+        return tabela.tamanho() > 0;
+    }
+
     public String listarSessoes() {
         StringBuilder texto = new StringBuilder();
         for (Sessao sessao : tabela.todas()) {

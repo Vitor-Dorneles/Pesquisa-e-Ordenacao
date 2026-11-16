@@ -2,10 +2,7 @@ package servidor.model;
 
 import java.util.Objects;
 
-/**
- * Uma sessão de telefonia: o número do celular (chave) e os dados da sessão
- * (o JSON da linha do arquivo, guardado como texto).
- */
+
 public class Sessao {
     private final String numeroCelular;
     private final String dadosSessao;
