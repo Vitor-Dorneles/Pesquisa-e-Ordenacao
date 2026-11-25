@@ -113,3 +113,4 @@ __pycache__/
 
 # NetBeans: configuração local da máquina (caminhos, arquivos abertos)
 **/nbproject/private/
+/Aulas/Aula-24_TrabalhoFinal/ControleProdutos/dist/

@@ -1,0 +1,14 @@
+Operação;1.000;10.000;50.000
+Ordenação Simples (por preço)(ms);4.05;375.82;43338.44
+Ordenação mais eficiente (por preço)(ms);2.07;2.83;15.73
+Busca linear por id (média) (ns);659;9615;260120
+Busca binária por id (média) (ns);38;43;41
+Busca por HashMap (média) (ns);47;61;62
+Construção do HashMap (ms);0.14;1.83;6.57
+
+Análise:
+- HashMap e binária foram as mais rápidas, muito mais rápidas que a linear.
+- Linear: o tempo cresceu junto com a lista, porque ela compara produto por produto até achar o id.
+- Binária: o tempo quase não mudou com a lista maior, porque a cada comparação ela descarta metade da lista ordenada.
+- HashMap: o tempo ficou igual nos três tamanhos, porque calcula onde o produto está e vai direto. Mas montar é demorado, o que não compensa se for fazer poucas buscas.
+- Vale montar o HashMap quando forem feitas muitas buscas. Para uma busca só, a linear resolve.
